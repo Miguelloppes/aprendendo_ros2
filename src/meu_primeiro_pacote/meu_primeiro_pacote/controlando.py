@@ -4,9 +4,11 @@ from rclpy.qos import QoSProfile, QoSReliabilityPolicy
 from sensor_msgs.msg import LaserScan
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist, Vector3
+import time
 
 class Controle(Node):
     def __init__(self):
+        super().__init__('controle_robo')
         qos_profile = QoSProfile(depth = 10, reliability = QoSReliabilityPolicy.BEST_EFFORT)
         self.laser = None
         self.create_subscription(LaserScan, '/scan', self.listener_callback_laser, qos_profile)
