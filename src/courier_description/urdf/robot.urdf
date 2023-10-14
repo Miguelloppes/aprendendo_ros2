@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+
+<robot name="courier">
+  <link name="base">
+    <visual>
+      <geometry>
+        <box size="0.4 0.4 0.2" />
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="compartimento">
+    <visual>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="lidar">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.04" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="ultrasson">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.04" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="tampa_compartimento">
+    <visual>
+      <geometry>
+        <box size="0.3 0.3 0.01" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="espaco_camera">
+    <visual>
+      <geometry>
+        <box size="0.1 0.35 0.05" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="roda1">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.05" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="roda2">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.05" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="roda3">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.05" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="roda4">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.05" />
+      </geometry>
+      <material name="gray">
+        <color rgba="0.5 0.5 0.5 1" />
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_to_compartimento" type="fixed">
+    <origin xyz="0 0 0.05" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="compartimento" />
+  </joint>
+
+  <joint name="base_to_lidar" type="fixed">
+    <origin xyz="0.176 0 0.11" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="lidar" />
+  </joint>
+
+  <joint name="base_to_ultrasson" type="fixed">
+    <origin xyz="-0.18 0.0 0.0" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="ultrasson" />
+  </joint>
+
+  <joint name="base_to_espaco_camera" type="fixed">
+    <origin xyz="0.18 0.0 0.05" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="espaco_camera" />
+  </joint>
+
+  <joint name="base_to_tampa" type="fixed">
+    <origin xyz="0 0 0.05" rpy="0 0 0" />
+    <parent link="compartimento" />
+    <child link="tampa_compartimento" />
+  </joint>
+
+  <joint name="base_to_roda1" type="continuous">
+    <origin xyz="0.2 0.2 -0.1" rpy="1.5708 0 0" />
+    <parent link="base" />
+    <child link="roda1" />
+  </joint>
+
+  <joint name="base_to_roda2" type="continuous">
+    <origin xyz="0.2 -0.2 -0.1" rpy="1.5708 0 0" />
+    <parent link="base" />
+    <child link="roda2" />
+  </joint>
+
+  <joint name="base_to_roda3" type="continuous">
+    <origin xyz="-0.2 -0.2 -0.1" rpy="1.5708 0 0" />
+    <parent link="base" />
+    <child link="roda3" />
+  </joint>
+
+  <joint name="base_to_roda4" type="continuous">
+    <origin xyz="-0.2 0.2 -0.1" rpy="1.5708 0 0" />
+    <parent link="base" />
+    <child link="roda4" />
+  </joint>
+</robot>
