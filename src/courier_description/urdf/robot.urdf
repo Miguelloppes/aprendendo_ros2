@@ -4,7 +4,7 @@
   <link name="base">
     <visual>
       <geometry>
-        <box size="0.4 0.4 0.2" />
+        <box size="0.4 0.4 1" />
       </geometry>
       <material name="black">
         <color rgba="0 0 0 1" />
@@ -28,6 +28,123 @@
     </collision>
   </link>
 
+  <link name="tampa_compartimento">
+    <visual>
+      <geometry>
+        <box size="0.3 0.01 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="compartimento2">
+    <visual>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tampa_compartimento2">
+    <visual>
+      <geometry>
+        <box size="0.3 0.01 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="compartimento3">
+    <visual>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tampa_compartimento3">
+    <visual>
+      <geometry>
+        <box size="0.3 0.01 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+  </link>
+
+  <link name="compartimento4">
+    <visual>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tampa_compartimento4">
+    <visual>
+      <geometry>
+        <box size="0.3 0.01 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+  </link>
+
+ <link name="compartimento5">
+    <visual>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3 0.3 0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="tampa_compartimento5">
+    <visual>
+      <geometry>
+        <box size="0.3 0.01 0.1" />
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+  </link>
   <link name="lidar">
     <visual>
       <geometry>
@@ -39,32 +156,10 @@
     </visual>
   </link>
 
-  <link name="ultrasson">
-    <visual>
-      <geometry>
-        <box size="0.05 0.05 0.04" />
-      </geometry>
-      <material name="blue">
-        <color rgba="0 0 1 1" />
-      </material>
-    </visual>
-  </link>
-
-  <link name="tampa_compartimento">
-    <visual>
-      <geometry>
-        <box size="0.3 0.3 0.01" />
-      </geometry>
-      <material name="blue">
-        <color rgba="0 0 1 1" />
-      </material>
-    </visual>
-  </link>
-
   <link name="espaco_camera">
     <visual>
       <geometry>
-        <box size="0.1 0.35 0.05" />
+        <box size="0.01 0.35 0.15" />
       </geometry>
       <material name="blue">
         <color rgba="0 0 1 1" />
@@ -117,55 +212,102 @@
   </link>
 
   <joint name="base_to_compartimento" type="fixed">
-    <origin xyz="0 0 0.05" rpy="0 0 0" />
+    <origin xyz="0 0 0.0" rpy="0 0 0" />
     <parent link="base" />
     <child link="compartimento" />
   </joint>
 
-  <joint name="base_to_lidar" type="fixed">
-    <origin xyz="0.176 0 0.11" rpy="0 0 0" />
-    <parent link="base" />
-    <child link="lidar" />
-  </joint>
-
-  <joint name="base_to_ultrasson" type="fixed">
-    <origin xyz="-0.18 0.0 0.0" rpy="0 0 0" />
-    <parent link="base" />
-    <child link="ultrasson" />
-  </joint>
-
-  <joint name="base_to_espaco_camera" type="fixed">
-    <origin xyz="0.18 0.0 0.05" rpy="0 0 0" />
-    <parent link="base" />
-    <child link="espaco_camera" />
-  </joint>
-
   <joint name="base_to_tampa" type="fixed">
-    <origin xyz="0 0 0.05" rpy="0 0 0" />
+    <origin xyz="0 0.21 0.0" rpy="0 0 0" />
     <parent link="compartimento" />
     <child link="tampa_compartimento" />
   </joint>
 
+  <joint name="base_to_compartimento2" type="fixed">
+    <origin xyz="0 0 0.20" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="compartimento2" />
+  </joint>
+
+  <joint name="base_to_tampa2" type="fixed">
+    <origin xyz="0 0.21 0.20" rpy="0 0 0" />
+    <parent link="compartimento" />
+    <child link="tampa_compartimento2" />
+  </joint>
+  
+
+  <joint name="base_to_compartimento3" type="fixed">
+    <origin xyz="0 0 0.40" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="compartimento3" />
+  </joint>
+
+  <joint name="base_to_tampa3" type="fixed">
+    <origin xyz="0 0.21 0.40" rpy="0 0 0" />
+    <parent link="compartimento" />
+    <child link="tampa_compartimento3" />
+  </joint>
+  
+
+  <joint name="base_to_compartimento4" type="fixed">
+    <origin xyz="0 0 -0.20" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="compartimento4" />
+  </joint>
+
+  <joint name="base_to_tampa4" type="fixed">
+    <origin xyz="0 0.21 -0.20" rpy="0 0 0" />
+    <parent link="compartimento" />
+    <child link="tampa_compartimento4" />
+  </joint>
+  
+
+  <joint name="base_to_compartimento5" type="fixed">
+    <origin xyz="0 0 -0.40" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="compartimento5" />
+  </joint>
+
+  <joint name="base_to_tampa5" type="fixed">
+    <origin xyz="0 0.21 -0.40" rpy="0 0 0" />
+    <parent link="compartimento" />
+    <child link="tampa_compartimento5" />
+  </joint>
+  
+
+  <joint name="base_to_lidar" type="fixed">
+    <origin xyz="0.176 0 0.51" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="lidar" />
+  </joint>
+
+
+  <joint name="base_to_espaco_camera" type="fixed">
+    <origin xyz="0.2 0.0 0.35" rpy="0 0 0" />
+    <parent link="base" />
+    <child link="espaco_camera" />
+  </joint>
+
   <joint name="base_to_roda1" type="continuous">
-    <origin xyz="0.2 0.2 -0.1" rpy="1.5708 0 0" />
+    <origin xyz="0.2 0.2 -0.5" rpy="1.5708 0 0" />
     <parent link="base" />
     <child link="roda1" />
   </joint>
 
   <joint name="base_to_roda2" type="continuous">
-    <origin xyz="0.2 -0.2 -0.1" rpy="1.5708 0 0" />
+    <origin xyz="0.2 -0.2 -0.5" rpy="1.5708 0 0" />
     <parent link="base" />
     <child link="roda2" />
   </joint>
 
   <joint name="base_to_roda3" type="continuous">
-    <origin xyz="-0.2 -0.2 -0.1" rpy="1.5708 0 0" />
+    <origin xyz="-0.2 -0.2 -0.5" rpy="1.5708 0 0" />
     <parent link="base" />
     <child link="roda3" />
   </joint>
 
   <joint name="base_to_roda4" type="continuous">
-    <origin xyz="-0.2 0.2 -0.1" rpy="1.5708 0 0" />
+    <origin xyz="-0.2 0.2 -0.5" rpy="1.5708 0 0" />
     <parent link="base" />
     <child link="roda4" />
   </joint>
